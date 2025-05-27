@@ -1,0 +1,20 @@
+---
+import type { Time } from '@/lib/utils'
+
+import Span from '@/components/Span.vue'
+import CastSection from '@/components/section/CastSection.astro'
+
+import BruteAbombinator from './BruteAbombinator.astro'
+
+interface Props {
+  start: Time
+  base?: Time
+}
+
+const { start, base = 0 }: Props = Astro.props
+---
+
+<CastSection start={start} base={base} duration={2.7} ability="Thorny Deathmatch ">
+  <BruteAbombinator slot="source" />
+  读条结束后持续连线当前一仇目标,并对目标造成持续dot伤害
+</CastSection>
